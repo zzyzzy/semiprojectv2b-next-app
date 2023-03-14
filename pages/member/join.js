@@ -10,9 +10,10 @@ export default function Join() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
+    console.log(process.env.SITE_KEY);
+
     const handlejoin = async () => {
-        if (grecaptcha.getResponse()
-            && await check_captcha(grecaptcha.getResponse())) {
+        if (grecaptcha.getResponse() && await check_captcha(grecaptcha.getResponse())) {
             // 회원가입 작업 진행
             const data = {userid: userid, passwd: passwd, name: name, email: email};
             if (await process_submit('/api/member/join', data) > 0) {
@@ -43,7 +44,8 @@ export default function Join() {
                      onChange={e => handleInput(setEmail, e)}/></div>
 
               <div><label></label>
-                  <div className="g-recaptcha cap" data-sitekey="6LdG4OskAAAAAMgMFOSHk_hTcglHx9m1Z9qBuR6y"></div>
+                  <div className="g-recaptcha cap"
+                       data-sitekey='6LdG4OskAAAAAMgMFOSHk_hTcglHx9m1Z9qBuR6y'></div>
               </div>
 
               <div><label></label>
