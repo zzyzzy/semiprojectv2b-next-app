@@ -1,11 +1,11 @@
 import {useState} from "react";
-import {handleInput} from "../../models/Utils";
 import axios from "axios";
+import {handleInput} from "../../models/Utils";
 
 export default function Login() {
 
     const [userid, setUserid] = useState('');
-    const [passwd, setPasswd,] = useState('');
+    const [passwd, setPasswd] = useState('');
 
     const handlelogin = async () => {
         const data = {userid: userid, passwd: passwd};
