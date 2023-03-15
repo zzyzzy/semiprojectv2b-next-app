@@ -3,7 +3,9 @@ import Footer from "./Footer";
 
 // localhost:3000/member/join
 
-const Layout = ({children}) => {
+const Layout = ({children, menu}) => {
+    console.log('layout -', menu);
+
     return (
             <html lang="ko">
                 <head>
@@ -16,7 +18,7 @@ const Layout = ({children}) => {
                 </head>
                 <body>
                 <div id="wrapper">
-                    <Header />
+                    <Header menu={menu}/>
                     {children}
                     <Footer />
                 </div>
