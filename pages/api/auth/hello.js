@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 const saltRounds = 10;   // salt키 생성 횟수 지정
 
