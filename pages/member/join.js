@@ -1,6 +1,8 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import {handleInput,check_captcha, hashPassword, process_submit} from "../../components/Utils";
 import {getSession} from "next-auth/client";
+import Layout from "../../components/layout/Layout";
+import Home from "../index";
 
 export async function getServerSideProps(ctx) {
 
@@ -72,3 +74,9 @@ export default function Join() {
       </main>
   )
 }
+
+Join.getLayout = (page) => (
+    <Layout meta={{title: '회원가입'}}>
+        {page}
+    </Layout>
+);

@@ -1,4 +1,7 @@
 import axios from "axios";
+import Layout from "../../components/layout/Layout";
+import React from "react";
+import List from "./list";
 
 
 export async function getServerSideProps(ctx) {
@@ -54,3 +57,9 @@ export default function View({board}) {
 );
 
 }
+
+View.getLayout = (page) => (
+    <Layout meta={{title: '게시판 본문보기'}}>
+        {page}
+    </Layout>
+);
