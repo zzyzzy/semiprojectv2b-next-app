@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {handleInput,check_captcha, hashPassword, process_submit} from "../../models/Utils";
+import {handleInput,check_captcha, hashPassword, process_submit} from "../../components/Utils";
 import {getSession} from "next-auth/client";
 
 export async function getServerSideProps(ctx) {
